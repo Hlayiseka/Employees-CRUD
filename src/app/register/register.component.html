@@ -1,5 +1,30 @@
-<div>
-  <h2>Register</h2>
-  form
+<div class="cover">
+  <div class="page" >
+    <div id="Register"></div>
+      <div id="registerBox">
+          <h1 style="color: tomato">Register Here</h1>
+          <form>
+            <p>Name</p><input type="text" placeholder="Enter your name">
+            <p>Surname</p><input type="text" placeholder="Enter your surname">
+            <p>E-mail</p><input type="text" placeholder="Enter your email adrress"><br>
+            <p>
+            <label>Cell number<br></label><br>
+              <select style="height: 45px">
+                <option>+27</option>
+                <option>+28</option>
+                <option>+29</option>
+                <option>+30</option>
+              </select>
+              <input type="tel" placeholder="Enter your Cell number" style="width: 100px" style="height:40px;"></p>
+            
+            <p>Password</p><input type="text" placeholder="Enter your password">
+            <p>Confirm password</p><input type="text" placeholder="Confirm password">
   
-</div>>
+            
+            <p><input type="button" value="Register" style="background-color: skyblue"></p>
+            <p><a RouterLink="/Login" href="/login"> Login</a></p>
+          </form>
+        </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
