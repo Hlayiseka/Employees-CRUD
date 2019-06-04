@@ -1,0 +1,30 @@
+.cover{
+    background-image: url('../../assets/bck.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}    
+.page {
+    margin: 0;
+    position: relative;
+    max-width: 900px;
+    width: 500px;
+    height: 810px;
+    left: 40%;
+    top:8%;
+    position: absolute;
+    background-color: lightgray;
+}
+
+#registerBox {
+   margin-left: 40px;
+
+}
+input[type='text'] {
+    width: 80%;
+    height: 40px;
+}
+input[type='button'] {
+    width: 81%;
+    height: 40px;
+}

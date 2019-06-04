@@ -1,0 +1,166 @@
+<div class="container" style="background-image: ">
+
+  <h2>Create data</h2>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" 
+        name="name" [(ngModel)]="model.name" placeholder="Enter name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="surname">Surname:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="surname"
+        name="surname" [(ngModel)]="model.surname" placeholder="Enter surname">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="gender">Gender:</label>
+      <div class="col-sm-10"> 
+        <input type="radio" name="gender" gender="male"><span gender="male">&nbsp; Male</span>&nbsp;&nbsp;
+        <input type="radio" name="gender" gender="male" name="gender" [(ngModel)]="model.gender"><span gender="male">&nbsp; Female</span>
+        
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="cellPhone">Cell phone:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="cellPhone"
+        name="cellPhone" [(ngModel)]="model.cellPhone" placeholder="Enter cell phone no.">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="emailAddress">E-mail address:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="emailAddress"
+        name="emailAddress" [(ngModel)]="model.emailAddress" placeholder="Enter e-mail address">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="organizationalUnit">Organizational unit:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="emailAddress"
+        name="organizationalUnit" [(ngModel)]="model.organizationalUnit" placeholder="Enter organizational unit">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="bio">Bio:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="bio"
+        name="bio" [(ngModel)]="model.bio" style="height: 100px" placeholder="Enter bio">
+      </div>
+    </div>
+    <div class="form-group">
+      <!----><label class="control-label col-sm-2" for="image">Image:</label>
+      <div class="col-sm-10"> 
+        <input type="file" id="image"
+        name="image" [(ngModel)]="model.image">
+      </div>
+    </div>
+    <div class="form-group"> 
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="addEmployee()">Save</button>
+      </div>
+    </div>
+  </form>
+  <h2>Read data & (Delete data)</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th width=200>Name</th>
+        <th width=200>Surname</th>
+        <th width=200>Gender</th>
+        <th width=200>Cell phone</th>
+        <th width=200>E-mail address</th>
+        <th width=200>Organizational unit</th>
+        <th width=200>Bio</th>
+        <th width=200>Image</th>
+        <th width=100>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees; let i=index">
+        <td>{{employee.name}}</td>
+        <td>{{employee.surname}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.cellPhone}}</td>
+        <td>{{employee.emailAddress}}</td>
+        <td>{{employee.organizationalUnit}}</td>
+        <td>{{employee.bio}}</td>
+        <td>{{employee.image}}</td>
+        <td>
+          <a class="btn btn-success" (click)="editEmployee(i)">Edit</a>
+          <a class="btn btn-danger" (click)="deleteEmployee(i)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Update data</h2>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" 
+        name="name" [(ngModel)]="model2.name" placeholder="Enter name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="surname">Surname:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="surname"
+        name="surname" [(ngModel)]="model2.surname" placeholder="Enter surname">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="gender">Gender:</label>
+      <div class="col-sm-10"> 
+        <input type="radio" name="gender" id="male"><span id="male">&nbsp; Male</span>&nbsp;&nbsp;
+        <input type="radio" name="gender" id="male" name="gender" [(ngModel)]="model2.gender">><span id="male">&nbsp; Female</span>
+        
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="cellPhone">Cell phone:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="cellPhone"
+        name="cellPhone" [(ngModel)]="model2.cellPhone" placeholder="Enter cell phone no.">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="emailAddress">E-mail address:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="emailAddress"
+        name="emailAddress" [(ngModel)]="model2.emailAddress" placeholder="Enter e-mail address">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="organizationalUnit">Organizational unit:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="emailAddress"
+        name="organizationalUnit" [(ngModel)]="model2.organizationalUnit" placeholder="Enter organizational unit">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="bio">Bio:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="bio"
+        name="bio" [(ngModel)]="model2.bio" style="height: 100px" placeholder="Enter bio">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="image">Image:</label>
+      <div class="col-sm-10"> 
+        <input type="file" id="image"
+        name="image" [(ngModel)]="model2.image">
+      </div>
+    </div>
+    <div class="form-group"> 
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="updateEmployee()"> Update</button>
+      </div>
+    </div>
+  </form>
+</div>
